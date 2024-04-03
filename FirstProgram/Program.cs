@@ -1,1 +1,1 @@
-﻿Console.WriteLine("Hello, World!");
+﻿Console.WriteLine('\u005C');
