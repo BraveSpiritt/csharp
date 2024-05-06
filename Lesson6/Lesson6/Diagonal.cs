@@ -1,33 +1,33 @@
 ﻿using System;
 
-public class MatrixCalculator
+public class Diagonal
 {
-    public int CalculateMatrixSum(int[,] matrix)
+    static void getDiagonal(int[,] mat, int n)
     {
-        int sum = 0;
 
-        for (int i = 0; i < matrix.GetLength(0); i++)
+        for (int i = 0; i < n; i++)
         {
-            for (int j = 0; j < matrix.GetLength(1); j++)
+            for (int j = 0; j < n; j++)
             {
-                sum += matrix[i, j];
+                if (i == j)
+                {
+                    Console.Write(mat[i, j] + ", ");
+                }
             }
         }
-
-        return sum;
+        Console.WriteLine("");
     }
 
-    public static void Main(string[] args)
+
+    public static void Main(String[] args)
     {
-        int[,] matrix = {
-            { 1, 2, 3 },
-            { 4, 5, 6 },
-            { 7, 8, 9 }
-        };
+        int n = 4;
+        int[,] a = { { 1, 2, 3, 4 },
+                    { 5, 6, 7, 8 },
+                    { 1, 2, 3, 4 },
+                    { 5, 6, 7, 8 } };
 
-        MatrixCalculator calculator = new MatrixCalculator();
-        int sum = calculator.CalculateMatrixSum(matrix);
+        getDiagonal(a, n);
 
-        Console.WriteLine($"The sum of all elements in the matrix is: {sum}");
     }
 }
